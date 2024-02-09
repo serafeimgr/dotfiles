@@ -1,0 +1,40 @@
+# Inserts a blank line between shell prompts
+
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = true
+command_timeout = 15
+
+[character]
+# success_symbol = "[Γ₧£](bold green)"
+# error_symbol = '[Γ£ù](bold red) '
+vicmd_symbol = "[V](bold green)"
+
+[package]
+disabled = true
+
+[python]
+disabled = true
+
+[directory]
+truncation_length = 8
+truncation_symbol = "../"
+truncate_to_repo  = false
+
+[time]
+time_format = '%T'
+disabled = false
+
+[kubernetes]
+format = 'on [Γ¢╡ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+disabled = false
+
+[env_var.KUBECONFIG]
+default = ''
+style = 'dimmed green'
+format = "\n$env_value ($style)"
+disabled = false
+
+[container]
+format = '[$symbol \[$name\]]($style) '
+disabled = false
+
