@@ -15,7 +15,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 export TERM=xterm-256color
-export PATH="$PATH:$HOME/.local/bin:/mnt/c/Users/tigk/AppData/Local/Programs/Microsoft VS Code/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export EDITOR=nvim
 export VISUAL=nvim
 export TZ='Europe/Athens'
@@ -28,8 +28,8 @@ alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
-# alias s="tac ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | tr -d '\n' | clip.exe"
-alias s="tac ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clip.exe"
+alias s="tail -r  ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
+# alias s="tac ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
 alias e="vim ~/snippets.txt"
 alias k="kubectl"
 
