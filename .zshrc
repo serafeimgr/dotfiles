@@ -37,7 +37,6 @@ alias cat="bat"
 alias ls="ls -altrh --color=auto"
 alias tf="terraform"
 alias tg="terragrunt"
-alias win="/mnt/c/Users/tigk"
 
 alias assume="source /usr/local/bin/assume"
 
@@ -45,7 +44,7 @@ eval "$(starship init zsh)"
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 # bindkey -v
-export KEYTIMEOUT=50
+export KEYTIMEOUT=1
 
 autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
