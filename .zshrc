@@ -33,7 +33,6 @@ alias s="tail -r  ~/snippets.txt | fzf --border --layout=reverse --prompt='Searc
 alias e="vim ~/snippets.txt"
 alias k="kubectl"
 
-alias open="explorer.exe"
 alias cat="bat"
 alias ls="ls -altrh --color=auto"
 alias tf="terraform"
