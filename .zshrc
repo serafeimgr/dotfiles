@@ -43,7 +43,6 @@ alias assume="source /usr/local/bin/assume"
 eval "$(starship init zsh)"
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
-# bindkey -v
 export KEYTIMEOUT=1
 
 autoload -U +X bashcompinit && bashcompinit
