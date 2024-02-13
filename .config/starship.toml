@@ -5,8 +5,6 @@ add_newline = true
 command_timeout = 15
 
 [character]
-# success_symbol = "[Γ₧£](bold green)"
-# error_symbol = '[Γ£ù](bold red) '
 vicmd_symbol = "[V](bold green)"
 
 [package]
@@ -25,7 +23,7 @@ time_format = '%T'
 disabled = false
 
 [kubernetes]
-format = 'on [Γ¢╡ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+format = 'on k8s ($user on )($cluster in )$context \($namespace\)](dimmed green) '
 disabled = false
 
 [env_var.KUBECONFIG]
