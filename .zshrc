@@ -1,9 +1,12 @@
 if [ "$TMUX" = "" ]; then tmux; fi
+
+export DISABLE_FZF_KEY_BINDINGS="false"
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="dracula"
 
 plugins=(
+        fzf
         fzf-tab
         git
         zsh-autosuggestions
@@ -28,10 +31,11 @@ alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
-alias s="tail -r  ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
-# alias s="tac ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
+# alias s="tail -r  ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
+alias s="tac ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
 alias e="vim ~/snippets.txt"
 alias k="kubectl"
+alias h="helm"
 
 alias cat="bat"
 alias ls="ls -altrh --color=auto"
@@ -61,3 +65,6 @@ zstyle -e ':completion:*:hosts' hosts 'reply=(
 )'
 
 zstyle ':completion:*:ssh:argument-1:*' tag-order hosts
+
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && enable-fzf-tab')
+
