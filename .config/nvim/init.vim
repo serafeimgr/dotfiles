@@ -1,4 +1,5 @@
-set clipboard=unnamed
+set clipboard=unnamedplus
+set timeoutlen=1000 ttimeoutlen=0
 set cmdheight=2
 set colorcolumn=80
 set confirm
