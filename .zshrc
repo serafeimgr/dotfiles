@@ -19,6 +19,7 @@ source $ZSH/oh-my-zsh.sh
 
 export TERM=xterm-256color
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 export EDITOR=nvim
 export VISUAL=nvim
 export TZ='Europe/Athens'
@@ -27,12 +28,23 @@ export WSL_DISTRO_NAME="Ubuntu"
 setopt HIST_IGNORE_ALL_DUPS
 unsetopt beep
 
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
+if [[ $(command -v nvim) ]];
+then
+    alias v="nvim"
+    alias vi="nvim"
+    alias vim="nvim"
+fi
 
-# alias s="tail -r  ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
-alias s="tac ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
+if [[ $(command -v tail) ]];
+then
+    alias s="tail -r  ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
+fi
+
+if [[ $(command -v tac) ]];
+then
+    alias s="tac  ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
+fi
+
 alias e="vim ~/snippets.txt"
 alias k="kubectl"
 alias h="helm"
@@ -56,7 +68,11 @@ complete -o nospace -C /usr/bin/terraform terraform
 complete -o nospace -C /usr/bin/terragrunt terragrunt
 complete -C '$HOME/.local/bin/aws_completer' aws
 
-source /etc/bash_completion.d/azure-cli
+if [[ -e /etc/bash_completion.d/azure-cli ]];
+then
+    source /etc/bash_completion.d/azure-cli
+fi
+
 source <(helm completion zsh)
 source ~/set-tmux-title.sh
 
