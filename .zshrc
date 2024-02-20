@@ -1,6 +1,7 @@
 if [ "$TMUX" = "" ]; then tmux; fi
 
 export DISABLE_FZF_KEY_BINDINGS="false"
+export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="dracula"
@@ -24,6 +25,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export TZ='Europe/Athens'
 export WSL_DISTRO_NAME="Ubuntu"
+export BAT_THEME="Dracula"
 
 setopt HIST_IGNORE_ALL_DUPS
 unsetopt beep
@@ -83,4 +85,6 @@ zstyle -e ':completion:*:hosts' hosts 'reply=(
 zstyle ':completion:*:ssh:argument-1:*' tag-order hosts
 
 zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && enable-fzf-tab')
+
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.sh
 
