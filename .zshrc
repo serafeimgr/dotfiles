@@ -86,5 +86,3 @@ zstyle ':completion:*:ssh:argument-1:*' tag-order hosts
 
 zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && enable-fzf-tab')
 
-source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.sh
-
