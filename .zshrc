@@ -18,7 +18,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-export TERM=xterm-256color
+export TERM=screen-256color
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 export EDITOR=nvim
