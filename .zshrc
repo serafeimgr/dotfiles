@@ -52,6 +52,7 @@ alias k="kubectl"
 alias h="helm"
 
 if [[ $(command -v bat) ]];
+then
   alias cat="bat"
 fi
 
