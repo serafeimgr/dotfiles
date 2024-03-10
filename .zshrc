@@ -39,19 +39,22 @@ fi
 
 if [[ $(command -v tail) ]];
 then
-    alias s="tail -r  ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
+  alias s="tail -r ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
 fi
 
 if [[ $(command -v tac) ]];
 then
-    alias s="tac  ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
+  alias s="tac ~/snippets.txt | fzf --border --layout=reverse --prompt='Search for a command to copy into the clipboard: ' | clipcopy"
 fi
 
 alias e="vim ~/snippets.txt"
 alias k="kubectl"
 alias h="helm"
 
-alias cat="bat"
+if [[ $(command -v bat) ]];
+  alias cat="bat"
+fi
+
 alias ls="ls -altrh --color=auto"
 alias tf="terraform"
 alias tg="terragrunt"
