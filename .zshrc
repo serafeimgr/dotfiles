@@ -56,6 +56,7 @@ then
   alias cat="bat"
 fi
 
+alias github="~/github.sh"
 alias ls="ls -altrh --color=auto"
 alias tf="terraform"
 alias tg="terragrunt"
