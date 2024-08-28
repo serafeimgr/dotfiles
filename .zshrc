@@ -57,6 +57,7 @@ then
 fi
 
 alias github="~/github.sh"
+alias repos='cd $(find ~/repos -depth 1 -type d | fzf)'
 alias ls="ls -altrh --color=auto"
 alias tf="terraform"
 alias tg="terragrunt"
