@@ -1,8 +1,5 @@
 ssh() {
-  # grep -w: match command names such as "tmux-2.1" or "tmux: server"
-  if ps -p $$ -o ppid= \
-    | xargs -i ps -p {} -o comm= \
-    | grep -qw tmux; then
+  if [ "$TMUX" != "" ]; then
     # Note: Options without parameter were hardcoded,
     # in order to distinguish an option's parameter from the destination.
     #
@@ -15,10 +12,9 @@ ssh() {
     #                \([^-][^[:space:]]*\) | destination
     #                                   .* | command
     #                                 /\6/ | replace with destination
-    tmux rename-window "$(echo "$@" \
-      | sed 's/[[:space:]]*\(\(\(-[46AaCfGgKkMNnqsTtVvXxYy]\)\|\(-[^[:space:]]*\([[:space:]]\+[^[:space:]]*\)\?\)\)[[:space:]]*\)*[[:space:]]\+\([^-][^[:space:]]*\).*/\6/')"
+    tmux rename-window "$(echo "$@" | sed 's/[[:space:]]*\(\(\(-[46AaCfGgKkMNnqsTtVvXxYy]\)\|\(-[^[:space:]]*\([[:space:]]\+[^[:space:]]*\)\?\)\)[[:space:]]*\)*[[:space:]]\+\([^-][^[:space:]]*\).*/\6/')"
     command ssh "$@"
-    tmux set-window-option automatic-rename "on" 1> /dev/null
+    tmux set-window-option automatic-rename "on" 1>/dev/null
   else
     command ssh "$@"
   fi
